@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build"
+  publish = "dist/saksavi-web/browser"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Angular handles routes like /white in the browser; serve index.html for them.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
