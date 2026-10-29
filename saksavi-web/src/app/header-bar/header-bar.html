@@ -1,0 +1,31 @@
+<header class="bar" [class.open]="open()">
+  <a class="cell brand" href="#top" (click)="go($event, 'body')" aria-label="SAKSAVI Agro Exports, back to top">
+    <span class="field-label">(1) Shipper</span>
+    <span class="name">SAKSAVI <span class="sub">Agro Exports</span></span>
+  </a>
+
+  <nav class="links" id="site-nav" aria-label="Sections">
+    @for (l of links; track l.href) {
+      <a class="cell" [href]="l.href" (click)="go($event, l.href)">
+        <span class="field-label">{{ l.no }} {{ l.label }}</span>
+        <span class="val typed">{{ l.value }}</span>
+      </a>
+    }
+  </nav>
+
+  <button type="button" class="cell menu" (click)="open.set(!open())" [attr.aria-expanded]="open()" aria-controls="site-nav">
+    <span class="field-label">Menu</span>
+    <svg viewBox="0 0 20 12" aria-hidden="true">
+      @if (open()) {
+        <path d="M4 1l12 10M16 1L4 11" stroke="currentColor" stroke-width="1.8" />
+      } @else {
+        <path d="M0 1h20M0 6h20M0 11h20" stroke="currentColor" stroke-width="1.8" />
+      }
+    </svg>
+  </button>
+
+  <a class="cell cta" href="#consignment" (click)="go($event, '#consignment')">
+    <span><span class="long">Request a </span>quote</span>
+    <svg viewBox="0 0 24 12" aria-hidden="true"><path d="M0 6h21M16 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" /></svg>
+  </a>
+</header>

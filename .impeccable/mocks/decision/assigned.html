@@ -1,0 +1,94 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1440px;height:900px;overflow:hidden}
+body{background:#173D24;font-family:Archivo,sans-serif;color:#F2F5EE;position:relative}
+.scene{position:absolute;inset:0;overflow:hidden}
+.sky{position:absolute;inset:0;background:linear-gradient(#0f2c19 0%,#1d4a2c 55%,#2c6a3a 100%)}
+.hill{position:absolute;left:-5%;right:-5%;border-radius:50% 50% 0 0}
+.h1{bottom:-120px;height:420px;background:#204f2e}
+.h2{bottom:-220px;height:440px;background:#163a22}
+.trunk{position:absolute;width:26px;background:#6B3F1F;border-radius:14px;transform-origin:bottom}
+.frond{position:absolute;width:220px;height:46px;background:#2f7d3f;border-radius:0 100% 0 100%}
+.nut{position:absolute;width:44px;height:48px;border-radius:50%;background:#7a4a24;box-shadow:inset -6px -8px 0 #5b3418}
+/* document frame */
+.frame{position:absolute;inset:24px;border:2px solid #DCE7D3;pointer-events:none}
+.bar{position:absolute;left:24px;right:24px;top:24px;height:64px;display:grid;grid-template-columns:330px 1fr 1fr 1fr 210px;border-bottom:2px solid #DCE7D3;background:rgba(23,61,36,.86)}
+.cell{border-right:1px solid rgba(220,231,211,.5);padding:10px 16px;display:flex;flex-direction:column;justify-content:center}
+.cell:last-child{border-right:0}
+.lab{font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-stretch:75%;opacity:.7}
+.val{font-family:'Courier Prime',monospace;font-size:17px}
+.brand{font-weight:900;font-stretch:125%;font-size:22px;letter-spacing:.02em}
+.navlink{font-family:'Courier Prime',monospace;font-size:16px;text-decoration:underline;text-underline-offset:4px}
+.cta{background:#F2F5EE;color:#173D24;font-weight:800;font-size:14px;letter-spacing:.08em;text-transform:uppercase;align-items:center}
+.box1{position:absolute;left:24px;top:88px;width:700px;padding:36px 40px;border-right:2px solid #DCE7D3;border-bottom:2px solid #DCE7D3;background:rgba(23,61,36,.78)}
+.no{font-family:'Courier Prime',monospace;font-size:13px;opacity:.75}
+h1{font-weight:900;font-stretch:125%;font-size:96px;line-height:.9;letter-spacing:-.01em;text-transform:uppercase;margin-top:14px}
+h1 em{font-style:normal;color:#DCE7D3;-webkit-text-stroke:0}
+.sub{font-family:'Courier Prime',monospace;font-size:20px;line-height:1.45;margin-top:22px;max-width:560px}
+.route{position:absolute;left:24px;right:24px;bottom:24px;height:84px;border-top:2px solid #DCE7D3;background:rgba(23,61,36,.9);display:grid;grid-template-columns:repeat(4,1fr) 470px}
+.stage{padding:14px 18px;border-right:1px solid rgba(220,231,211,.5)}
+.stage b{display:block;font-weight:900;font-stretch:125%;font-size:28px;text-transform:uppercase;margin-top:4px}
+.stage.ghost b{opacity:.35}
+.line{position:absolute;left:24px;right:494px;bottom:107px;height:3px;background:rgba(220,231,211,.35)}
+.line i{position:absolute;left:0;top:-5px;width:13px;height:13px;border-radius:50%;background:#F2F5EE}
+.form{position:absolute;right:24px;bottom:24px;width:470px;height:420px;background:#DCE7D3;color:#173D24;padding:22px 26px;border-left:2px solid #DCE7D3}
+.form h2{font-weight:900;font-stretch:125%;font-size:26px;text-transform:uppercase}
+.fld{border-bottom:1.5px solid #173D24;padding:10px 0 6px;margin-top:8px}
+.fld .lab{opacity:.8}
+.fld .val{font-size:19px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.btn{margin-top:22px;background:#173D24;color:#F2F5EE;padding:18px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-size:16px;text-align:center}
+.stamp{position:absolute;right:58px;top:20px;border:3px solid #5A3F8F;color:#5A3F8F;padding:6px 12px;font-weight:900;font-stretch:110%;font-size:15px;letter-spacing:.12em;transform:rotate(-8deg);text-transform:uppercase;opacity:.9}
+</style></head><body>
+<div class="scene">
+  <div class="sky"></div>
+  <div class="hill h1"></div>
+  <div class="trunk" style="left:960px;top:200px;height:560px;transform:rotate(6deg)"></div>
+  <div class="frond" style="left:830px;top:170px;transform:rotate(-24deg)"></div>
+  <div class="frond" style="left:990px;top:150px;transform:rotate(18deg) scaleX(-1)"></div>
+  <div class="frond" style="left:880px;top:118px;transform:rotate(-62deg)"></div>
+  <div class="frond" style="left:960px;top:120px;transform:rotate(58deg) scaleX(-1)"></div>
+  <div class="frond" style="left:800px;top:230px;transform:rotate(14deg)"></div>
+  <div class="frond" style="left:1010px;top:230px;transform:rotate(-12deg) scaleX(-1)"></div>
+  <div class="nut" style="left:940px;top:205px"></div>
+  <div class="nut" style="left:982px;top:212px"></div>
+  <div class="nut" style="left:960px;top:248px"></div>
+  <div class="nut" style="left:1004px;top:256px"></div>
+  <div class="trunk" style="left:1270px;top:330px;height:420px;transform:rotate(-8deg);opacity:.55"></div>
+  <div class="hill h2"></div>
+</div>
+<div class="frame"></div>
+<div class="bar">
+  <div class="cell"><span class="lab">(1) Shipper</span><span class="brand">SAKSAVI AGRO EXPORTS</span></div>
+  <div class="cell"><span class="lab">(2) Goods</span><span class="navlink">Coconuts</span></div>
+  <div class="cell"><span class="lab">(3) Journey</span><span class="navlink">Palm to port</span></div>
+  <div class="cell"><span class="lab">(4) Destination</span><span class="navlink">Worldwide</span></div>
+  <div class="cell cta">Request a quote →</div>
+</div>
+<div class="box1">
+  <div class="no">(5) DESCRIPTION OF GOODS</div>
+  <h1>Pure coconuts.<br><em>Global reach.</em></h1>
+  <p class="sub">Semi-husked, dehusked and tender coconuts, plus copra, oil and desiccated. Grown, collected and shipped by one exporter.</p>
+</div>
+<div class="line"><i></i></div>
+<div class="route">
+  <div class="stage"><span class="lab">Stage 01</span><b>Grown</b></div>
+  <div class="stage ghost"><span class="lab">Stage 02</span><b>Harvested</b></div>
+  <div class="stage ghost"><span class="lab">Stage 03</span><b>Collected</b></div>
+  <div class="stage ghost"><span class="lab">Stage 04</span><b>Shipped</b></div>
+</div>
+<div class="form">
+  <div class="no">(6) SHIPPING INSTRUCTION</div>
+  <h2>Book a consignment</h2>
+  <div class="fld"><div class="lab">Product</div><div class="val">Semi-husked coconuts ▾</div></div>
+  <div class="row">
+    <div class="fld"><div class="lab">Quantity</div><div class="val">1 × 40ft container</div></div>
+    <div class="fld"><div class="lab">Port of discharge</div><div class="val">Jebel Ali, UAE</div></div>
+  </div>
+  <div class="fld"><div class="lab">Your email / WhatsApp</div><div class="val">__________________</div></div>
+  <div class="btn">Request quote</div>
+</div>
+</body></html>

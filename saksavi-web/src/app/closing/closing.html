@@ -1,0 +1,38 @@
+<section id="consignment" class="closing" aria-labelledby="closing-title">
+  <div class="sheet">
+    <div class="lead">
+      <h2 class="display" id="closing-title">Tell us where it’s going.</h2>
+      <p class="typed">
+        Name the goods, the quantity and the port. SAKSAVI comes back with a quote for that consignment.
+      </p>
+
+      <div id="papers" class="papers" aria-labelledby="papers-title">
+        <h3 class="field-label" id="papers-title">Registrations</h3>
+        <dl>
+          @for (p of papers; track p.label) {
+            <div class="paper-row">
+              <dt class="typed">{{ p.label }}</dt>
+              <dd [class.pending]="!p.value">
+                {{ p.value ?? 'To be added' }}
+              </dd>
+            </div>
+          }
+        </dl>
+      </div>
+    </div>
+
+    <app-consignment-form class="close-form" variant="full" />
+  </div>
+
+  <footer class="foot">
+    <div class="sign">
+      <img src="saksavi-logo.jpeg" width="1254" height="1254" alt="SAKSAVI Agro Exports logo: Pure Coconuts, Global Reach" loading="lazy" />
+    </div>
+    <dl class="foot-fields">
+      <div><dt class="field-label">Shipper</dt><dd class="typed">SAKSAVI Agro Exports</dd></div>
+      <div><dt class="field-label">Place of issue</dt><dd class="typed pending">To be added</dd></div>
+      <div><dt class="field-label">Contact</dt><dd class="typed pending">To be added</dd></div>
+      <div><dt class="field-label">Issued</dt><dd class="typed">© {{ year }}</dd></div>
+    </dl>
+  </footer>
+</section>

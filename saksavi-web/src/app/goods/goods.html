@@ -1,0 +1,29 @@
+<section id="goods" class="goods" aria-labelledby="goods-title">
+  <header class="goods-head">
+    <h2 class="display goods-title" id="goods-title">
+      <span class="mask"><span class="ln">Six goods.</span></span>
+      <span class="mask"><span class="ln">One exporter.</span></span>
+    </h2>
+    <p class="intro typed">
+      Fresh nuts for shelves and kitchens, processed goods for mills and factories. Tell us the grade and packing you need in the enquiry.
+    </p>
+  </header>
+
+  <div class="manifest" role="table" aria-label="Goods SAKSAVI exports">
+    <div class="cols" role="row">
+      <span class="field-label" role="columnheader">Mark</span>
+      <span class="field-label" role="columnheader">Goods</span>
+      <span class="field-label" role="columnheader">Form</span>
+      <span class="field-label" role="columnheader">Bought for</span>
+    </div>
+    @for (g of goods; track g.mark) {
+      <div class="line-item" role="row">
+        <i class="rule" aria-hidden="true"></i>
+        <span class="mark cellv" role="cell">{{ g.mark }}</span>
+        <span class="name display cellv" role="cell">{{ g.name }}</span>
+        <span class="form typed cellv" role="cell">{{ g.form }}</span>
+        <span class="use typed cellv" role="cell">{{ g.use }}</span>
+      </div>
+    }
+  </div>
+</section>

@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-29T00:00:00Z",
+  "title": "Design System: SAKSAVI Agro Exports",
+  "extensions": {
+    "colorMeta": {
+      "green-950": { "role": "primary", "displayName": "Night Grove", "canonical": "#0b2213", "tonalRamp": ["#0b2213", "#0f2c19", "#173d24", "#1f4f2f", "#2f7d3f", "#4e9a55", "#8fbf8f", "#dce7d3"] },
+      "green-900": { "role": "primary", "displayName": "Grove Shade", "canonical": "#0f2c19", "tonalRamp": ["#0b2213", "#0f2c19", "#173d24", "#1f4f2f", "#2f7d3f", "#4e9a55", "#8fbf8f", "#dce7d3"] },
+      "green-800": { "role": "primary", "displayName": "Palm Green", "canonical": "#173d24", "tonalRamp": ["#0b2213", "#0f2c19", "#173d24", "#1f4f2f", "#2f7d3f", "#4e9a55", "#8fbf8f", "#dce7d3"] },
+      "green-700": { "role": "primary", "displayName": "Clerk Green", "canonical": "#1f4f2f", "tonalRamp": ["#0b2213", "#0f2c19", "#173d24", "#1f4f2f", "#2f7d3f", "#4e9a55", "#8fbf8f", "#dce7d3"] },
+      "green-600": { "role": "primary", "displayName": "Frond Green", "canonical": "#2f7d3f", "tonalRamp": ["#0b2213", "#0f2c19", "#173d24", "#1f4f2f", "#2f7d3f", "#4e9a55", "#8fbf8f", "#dce7d3"] },
+      "green-500": { "role": "primary", "displayName": "Young Frond", "canonical": "#4e9a55", "tonalRamp": ["#0b2213", "#0f2c19", "#173d24", "#1f4f2f", "#2f7d3f", "#4e9a55", "#8fbf8f", "#dce7d3"] },
+      "paper": { "role": "secondary", "displayName": "Security Paper", "canonical": "#dce7d3", "tonalRamp": ["#26301f", "#3d4a35", "#57664d", "#748468", "#93a386", "#b5c4a9", "#dce7d3", "#f2f5ee"] },
+      "paper-hi": { "role": "secondary", "displayName": "Clean Sheet", "canonical": "#f2f5ee", "tonalRamp": ["#2a2e26", "#42473d", "#5d6357", "#7b8274", "#9ba293", "#bec4b6", "#dce7d3", "#f2f5ee"] },
+      "husk": { "role": "tertiary", "displayName": "Coconut Husk", "canonical": "#6b3f1f", "tonalRamp": ["#2a170a", "#4a2b14", "#6b3f1f", "#7a4a24", "#9a6a3e", "#b98f66", "#d8bfa3", "#f1e7dc"] },
+      "husk-dark": { "role": "tertiary", "displayName": "Husk Shadow", "canonical": "#4a2b14", "tonalRamp": ["#2a170a", "#4a2b14", "#6b3f1f", "#7a4a24", "#9a6a3e", "#b98f66", "#d8bfa3", "#f1e7dc"] },
+      "husk-light": { "role": "tertiary", "displayName": "Husk Highlight", "canonical": "#9a6a3e", "tonalRamp": ["#2a170a", "#4a2b14", "#6b3f1f", "#7a4a24", "#9a6a3e", "#b98f66", "#d8bfa3", "#f1e7dc"] },
+      "stamp": { "role": "tertiary", "displayName": "Stamp Violet", "canonical": "#5a3f8f", "tonalRamp": ["#1f1533", "#33244f", "#46316f", "#5a3f8f", "#7660a8", "#9785c0", "#bcafd8", "#e6e0f0"] },
+      "correction": { "role": "tertiary", "displayName": "Correction Red", "canonical": "#a3341f", "tonalRamp": ["#3a120a", "#5c1c10", "#7f2716", "#a3341f", "#c25a43", "#d6866f", "#e8b4a6", "#f6e1db"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero statement only; wide-black capitals revealed line by line through overflow masks." },
+      "headline": { "displayName": "Headline", "purpose": "Section statements (goods, closing sheet)." },
+      "title": { "displayName": "Title", "purpose": "Panel titles, goods names, stage names in the route strip, the finale line." },
+      "body": { "displayName": "Body", "purpose": "Running Archivo text on the green ground." },
+      "typed": { "displayName": "Typed", "purpose": "Every filled-in value: subcopy, form entries, stage records, registration values." },
+      "action": { "displayName": "Action", "purpose": "Buttons and CTAs, width 112%, uppercase." },
+      "label": { "displayName": "Label", "purpose": "Condensed uppercase field labels, box numbers, stage labels, column headers." },
+      "box-no": { "displayName": "Box Number", "purpose": "Typed box numbering on document panels." }
+    },
+    "shadows": [
+      { "name": "now-halo", "value": "0 0 0 4px rgb(242 245 238 / 0.18)", "purpose": "Spread-only ring around the single 'now' marker on the route line. Position, not elevation." }
+    ],
+    "rules": [
+      { "name": "rule", "value": "2px solid var(--paper)", "purpose": "Page frame and major box divisions on green." },
+      { "name": "rule-soft", "value": "1px solid rgb(220 231 211 / 0.45)", "purpose": "Cell dividers inside the header, route strip, footer and registrations." },
+      { "name": "rule-ink", "value": "1.5px solid var(--green-800)", "purpose": "Field underlines, record and manifest line rules on paper." }
+    ],
+    "textures": [
+      { "name": "guilloche", "value": "repeating-radial-gradient(circle at 110% -10%, transparent 0 7px, rgb(23 61 36 / 0.05) 7px 8px), repeating-radial-gradient(circle at -10% 120%, transparent 0 9px, rgb(23 61 36 / 0.04) 9px 10px)", "purpose": "Security-print linework on every paper panel." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "State transitions: button background 0.25s, arrow nudge 0.35s, phone sheet 0.45s." },
+      { "name": "intro-reveal", "value": "gsap expo.out 1.4s, yPercent 110 -> 0, stagger 0.08s", "purpose": "Display lines rising through overflow masks on load." },
+      { "name": "story-scrub", "value": "ScrollTrigger pin, end +=7 viewport heights, scrub 0.9, defaults ease none", "purpose": "The palm-to-port timeline; camera, nuts, truck, crane, ship and globe all scrub to scroll." },
+      { "name": "smooth-scroll", "value": "Lenis lerp 0.09, wheelMultiplier 0.9, touchMultiplier 1.4, on gsap.ticker, lagSmoothing 0", "purpose": "One frame loop shared by smooth scroll and ScrollTrigger." },
+      { "name": "typewriter", "value": "TextPlugin, 0.8 timeline units per record", "purpose": "Stage records typing into the slip." },
+      { "name": "stage-ghost", "value": "opacity 0.38 (previous) / 1 (current), 0.25 units", "purpose": "Route strip: prior stage ghosts as the new stage arrives bright." },
+      { "name": "stamp-slam", "value": "scale 2.6 -> 1, rotate -16deg -> -9deg, power4.in 0.25 units; panel jolt x -3px yoyo", "purpose": "The violet stamp landing on the completed record." },
+      { "name": "anchor-scroll", "value": "Lenis scrollTo duration 1.6s, focus handed to target", "purpose": "In-page jumps to the consignment form." },
+      { "name": "reduced-motion", "value": "no Lenis, no pin, static hero frame; CSS durations 0.01ms", "purpose": "prefers-reduced-motion fallback." }
+    ],
+    "breakpoints": [
+      { "name": "form-narrow", "value": "1100px" },
+      { "name": "sheet-stack", "value": "1000px" },
+      { "name": "phone", "value": "900px" },
+      { "name": "form-stack", "value": "520px" },
+      { "name": "rows-stack", "value": "480px" },
+      { "name": "tiny", "value": "400px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Dark stencil-label action on paper, label and arrow pushed apart.",
+      "html": "<button class=\"ds-btn-primary\">Request quote <svg viewBox=\"0 0 24 12\" aria-hidden=\"true\"><path d=\"M0 6h21M16 1l5 5-5 5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/></svg></button>",
+      "css": ".ds-btn-primary { display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 320px; background: var(--green-800, #173d24); color: var(--paper-hi, #f2f5ee); border: 0; border-radius: 0; padding: 18px 22px; font-family: 'Archivo', system-ui, sans-serif; font-weight: 800; font-stretch: 112%; font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: background 0.25s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-primary svg { width: 26px; transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-primary:hover { background: var(--green-900, #0f2c19); } .ds-btn-primary:hover svg { transform: translateX(6px); } .ds-btn-primary:active { transform: translateY(1px); } .ds-btn-primary:focus-visible { outline: 2px solid var(--green-800, #173d24); outline-offset: 3px; }"
+    },
+    {
+      "name": "Paper Button",
+      "kind": "button",
+      "refersTo": "button-paper",
+      "description": "Clean Sheet action on the green ground (header CTA, finale CTA).",
+      "html": "<a class=\"ds-btn-paper\" href=\"#\">Book your consignment <svg viewBox=\"0 0 24 12\" aria-hidden=\"true\"><path d=\"M0 6h21M16 1l5 5-5 5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/></svg></a>",
+      "css": ".ds-btn-paper { display: inline-flex; align-items: center; gap: 18px; padding: 18px 24px; background: var(--paper-hi, #f2f5ee); color: var(--green-800, #173d24); border-radius: 0; font-family: 'Archivo', system-ui, sans-serif; font-weight: 800; font-stretch: 112%; font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: background 0.25s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-paper svg { width: 26px; transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-paper:hover { background: var(--paper, #dce7d3); } .ds-btn-paper:hover svg { transform: translateX(6px); } .ds-btn-paper:focus-visible { outline: 2px solid var(--paper-hi, #f2f5ee); outline-offset: 3px; }"
+    },
+    {
+      "name": "Typed Field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "A clerk's box: condensed label, Courier value, ink underline that thickens on focus.",
+      "html": "<div class=\"ds-paper\"><label class=\"ds-fld\"><span class=\"ds-label\">Port of discharge</span><input placeholder=\"e.g. Jebel Ali, UAE\"></label><label class=\"ds-fld ds-err\"><span class=\"ds-label\">Your email</span><input value=\"buyer@\"><span class=\"ds-msg\">Enter a valid email address.</span></label></div>",
+      "css": ".ds-paper { background: var(--paper, #dce7d3); color: var(--green-800, #173d24); padding: 22px 26px 18px; width: 360px; background-image: repeating-radial-gradient(circle at 110% -10%, transparent 0 7px, rgb(23 61 36 / 0.05) 7px 8px); } .ds-fld { display: flex; flex-direction: column; padding-top: 12px; border-bottom: 1.5px solid var(--green-800, #173d24); } .ds-fld:focus-within { border-bottom-width: 2.5px; } .ds-fld.ds-err { border-bottom-color: var(--correction, #a3341f); } .ds-label { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 75%; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green-700, #1f4f2f); } .ds-fld input { font-family: 'Courier Prime', 'Courier New', monospace; font-size: 18px; background: transparent; border: 0; border-radius: 0; padding: 6px 0 7px; color: var(--green-900, #0f2c19); outline: none; } .ds-fld input::placeholder { color: rgb(23 61 36 / 0.58); } .ds-msg { font-family: 'Archivo', system-ui, sans-serif; font-size: 13px; font-weight: 600; color: var(--correction, #a3341f); padding-bottom: 6px; }"
+    },
+    {
+      "name": "Document Header Strip",
+      "kind": "nav",
+      "refersTo": "header-strip",
+      "description": "The top strip of the bill of lading: numbered cells doubling as navigation, CTA cell at the end.",
+      "html": "<header class=\"ds-bar\"><a class=\"ds-cell\" href=\"#\"><span class=\"ds-lbl\">(1) Shipper</span><span class=\"ds-name\">SAKSAVI</span></a><a class=\"ds-cell\" href=\"#\"><span class=\"ds-lbl\">(2) Goods</span><span class=\"ds-val\">Coconuts</span></a><a class=\"ds-cell\" href=\"#\"><span class=\"ds-lbl\">(3) Journey</span><span class=\"ds-val\">Palm to port</span></a><a class=\"ds-cell ds-cta\" href=\"#\">Request a quote</a></header>",
+      "css": ".ds-bar { display: grid; grid-template-columns: 1.3fr 1fr 1fr auto; height: 64px; background: rgb(11 34 19 / 0.94); border: 2px solid var(--paper, #dce7d3); color: var(--paper-hi, #f2f5ee); } .ds-cell { display: flex; flex-direction: column; justify-content: center; gap: 2px; padding: 0 18px; color: inherit; text-decoration: none; transition: background 0.25s cubic-bezier(0.16, 1, 0.3, 1); } .ds-cell + .ds-cell { border-left: 1px solid rgb(220 231 211 / 0.45); } .ds-cell:hover { background: rgb(220 231 211 / 0.08); } .ds-cell:focus-visible { outline: 2px solid var(--paper-hi, #f2f5ee); outline-offset: -4px; } .ds-lbl { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 75%; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--paper, #dce7d3); opacity: 0.85; } .ds-name { font-family: 'Archivo', system-ui, sans-serif; font-weight: 900; font-stretch: 125%; font-size: 20px; line-height: 1.1; } .ds-val { font-family: 'Courier Prime', 'Courier New', monospace; font-size: 16px; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; } .ds-cta { flex-direction: row; align-items: center; padding: 0 24px; background: var(--paper-hi, #f2f5ee); color: var(--green-800, #173d24); font-family: 'Archivo', system-ui, sans-serif; font-weight: 800; font-stretch: 112%; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; } .ds-cta:hover { background: var(--paper, #dce7d3); }"
+    },
+    {
+      "name": "Route Strip",
+      "kind": "custom",
+      "refersTo": "route-strip",
+      "description": "Four stage cells under one unbroken progress line with a single 'now' marker; prior stages ghost to 0.38.",
+      "html": "<div class=\"ds-strip\"><div class=\"ds-line\"><i class=\"ds-progress\"></i><i class=\"ds-now\"></i></div><ol><li class=\"ds-ghost\"><span>Stage 01</span><b>Grown</b></li><li><span>Stage 02</span><b>Harvested</b></li><li class=\"ds-ghost\"><span>Stage 03</span><b>Collected</b></li><li class=\"ds-ghost\"><span>Stage 04</span><b>Shipped</b></li></ol></div>",
+      "css": ".ds-strip { position: relative; height: 84px; border-top: 2px solid var(--paper, #dce7d3); background: rgb(11 34 19 / 0.92); color: var(--paper-hi, #f2f5ee); } .ds-strip ol { display: grid; grid-template-columns: repeat(4, 1fr); height: 100%; margin: 0; padding: 0; list-style: none; } .ds-strip li { padding: 14px 18px 16px; transition: opacity 0.25s; } .ds-strip li + li { border-left: 1px solid rgb(220 231 211 / 0.45); } .ds-strip li.ds-ghost { opacity: 0.38; } .ds-strip span { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 75%; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--paper, #dce7d3); } .ds-strip b { display: block; margin-top: 6px; font-family: 'Archivo', system-ui, sans-serif; font-stretch: 125%; font-weight: 900; text-transform: uppercase; font-size: 24px; line-height: 0.9; } .ds-line { position: absolute; left: 0; right: 0; top: -2px; height: 2px; } .ds-progress { position: absolute; inset: 0; background: var(--paper-hi, #f2f5ee); transform: scaleX(0.4); transform-origin: 0 50%; } .ds-now { position: absolute; left: 40%; top: -6px; width: 14px; height: 14px; margin-left: -7px; border-radius: 50%; background: var(--paper-hi, #f2f5ee); box-shadow: 0 0 0 4px rgb(242 245 238 / 0.18); }"
+    },
+    {
+      "name": "Record Slip",
+      "kind": "card",
+      "refersTo": "document-panel",
+      "description": "Guilloche paper panel; numbered records light from 32% and type their Courier line as each stage arrives.",
+      "html": "<aside class=\"ds-slip\"><h2>Palm to port</h2><ol><li><span>Stage 01 · Grown</span><em>On the palm until fully mature</em></li><li><span>Stage 02 · Harvested</span><em>Ripe nuts come down from the crown</em></li><li class=\"ds-dim\"><span>Stage 03 · Collected</span><em></em></li></ol></aside>",
+      "css": ".ds-slip { width: 360px; padding: 26px 28px 30px; background: var(--paper, #dce7d3); color: var(--green-800, #173d24); background-image: repeating-radial-gradient(circle at 110% -10%, transparent 0 7px, rgb(23 61 36 / 0.05) 7px 8px); } .ds-slip h2 { margin: 0; font-family: 'Archivo', system-ui, sans-serif; font-stretch: 125%; font-weight: 900; text-transform: uppercase; line-height: 0.9; letter-spacing: -0.01em; font-size: 38px; } .ds-slip ol { margin: 18px 0 0; padding: 0; list-style: none; } .ds-slip li { display: flex; flex-direction: column; gap: 4px; padding: 12px 0 10px; border-top: 1.5px solid var(--green-800, #173d24); } .ds-slip li.ds-dim { opacity: 0.32; } .ds-slip span { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 75%; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green-700, #1f4f2f); } .ds-slip em { font-style: normal; min-height: 1.4em; font-family: 'Courier Prime', 'Courier New', monospace; font-size: 17px; line-height: 1.35; color: var(--green-900, #0f2c19); }"
+    },
+    {
+      "name": "Ink Stamp",
+      "kind": "custom",
+      "refersTo": "stamp",
+      "description": "Roughened violet rubber-stamp impression, multiply-blended; only at a confirmed state.",
+      "html": "<div class=\"ds-stamp-bed\"><svg class=\"ds-stamp\" viewBox=\"0 0 440 128\" aria-hidden=\"true\"><defs><filter id=\"dsink\" x=\"-5%\" y=\"-10%\" width=\"110%\" height=\"120%\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.85\" numOctaves=\"2\" seed=\"4\" result=\"grain\"/><feDisplacementMap in=\"SourceGraphic\" in2=\"grain\" scale=\"3.4\" xChannelSelector=\"R\" yChannelSelector=\"G\" result=\"rough\"/><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.035 0.09\" numOctaves=\"3\" seed=\"11\" result=\"pressure\"/><feColorMatrix in=\"pressure\" type=\"matrix\" values=\"0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.7 1.78\" result=\"patchy\"/><feComposite in=\"rough\" in2=\"patchy\" operator=\"in\"/></filter></defs><g filter=\"url(#dsink)\" fill=\"currentColor\"><path fill-rule=\"evenodd\" d=\"M6 6H434V122H6ZM12 12V116H428V12Z\"/><path fill-rule=\"evenodd\" d=\"M19 19H421V109H19ZM21.5 21.5V106.5H418.5V21.5Z\"/><text x=\"220\" y=\"79\" text-anchor=\"middle\" textLength=\"370\" lengthAdjust=\"spacingAndGlyphs\">SHIPPED ON BOARD</text></g></svg></div>",
+      "css": ".ds-stamp-bed { background: var(--paper, #dce7d3); padding: 32px; } .ds-stamp { display: block; width: 300px; color: var(--stamp, #5a3f8f); mix-blend-mode: multiply; transform: rotate(-9deg); overflow: visible; } .ds-stamp text { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 118%; font-weight: 900; font-size: 40px; letter-spacing: 0.06em; }"
+    },
+    {
+      "name": "Manifest Line",
+      "kind": "custom",
+      "refersTo": "shipping-mark",
+      "description": "Ruled goods row: stencilled mark in a box, title-type name, typed attributes.",
+      "html": "<div class=\"ds-line-item\"><span class=\"ds-mark\">SHC</span><span class=\"ds-gname\">Semi-husked coconuts</span><span class=\"ds-typed\">Husk trimmed, tuft on</span><span class=\"ds-typed\">Retail shelves</span></div>",
+      "css": ".ds-line-item { display: grid; grid-template-columns: 90px 1.25fr 1.1fr 0.9fr; column-gap: 32px; align-items: baseline; padding: 26px 0 28px; border-top: 1.5px solid var(--green-800, #173d24); background-color: var(--paper, #dce7d3); color: var(--green-800, #173d24); transition: background-color 0.35s cubic-bezier(0.16, 1, 0.3, 1); width: 860px; } .ds-line-item:hover { background-image: linear-gradient(rgb(23 61 36 / 0.045), rgb(23 61 36 / 0.045)); } .ds-mark { justify-self: start; padding: 4px 8px; border: 1.5px solid currentColor; font-family: 'Archivo', system-ui, sans-serif; font-weight: 900; font-stretch: 125%; font-size: 15px; letter-spacing: 0.1em; } .ds-gname { font-family: 'Archivo', system-ui, sans-serif; font-weight: 900; font-stretch: 125%; text-transform: uppercase; font-size: 34px; line-height: 0.95; } .ds-typed { font-family: 'Courier Prime', 'Courier New', monospace; font-size: 16.5px; line-height: 1.45; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Shipment's Own Paperwork",
+    "overview": "The page is a bill of lading laid over a grove at dusk. A deep palm green ground carries an illustrated world (procedural palms, husk-brown trunks and nuts, a truck, a port crane, a ship, a globe of routes). On top of it sits the document: pale security-print panels with guilloche linework, numbered boxes, hairline rules, and fields that fill in as the story runs. The enquiry is the consignment form. The visitor is not reading a brochure; they are watching their consignment get written up.\n\nDensity is low, and hierarchy comes from scale. Labels are tiny condensed capitals and values are huge wide-black capitals, with very little in between. Typed fill-ins in Courier Prime carry every value a clerk would write by hand: subcopy, form entries, stage records, registration numbers. Paper sits flat on the green. Depth comes from parallax illustration layers and from the document's ruled frame, not from lifted cards.\n\nMotion is one continuous scroll-scrubbed shipment. A pinned GSAP timeline, smoothed by Lenis, moves the camera from palm to port. Each stage types its record line, the route strip ghosts the previous stage while the new one arrives bright, and one marker for \"now\" travels along a single unbroken line. The violet stamp lands only when the shipment is done.",
+    "keyCharacteristics": [
+      "Drenched palm-green ground with pale paper panels ruled into a document grid.",
+      "Wide-black Archivo display, condensed Archivo labels, Courier Prime typed values.",
+      "Numbered boxes and stage numbers (\"(1) Shipper\", \"Stage 03\") as native document furniture.",
+      "Square corners everywhere in the UI; the paper sits flat, with no elevation.",
+      "Violet rubber-stamp ink reserved for the end of the transaction.",
+      "Scroll-scrubbed illustration story with typewriter fills and one \"now\" marker."
+    ],
+    "rules": [
+      { "name": "The Stamp Ink Rule", "body": "Violet is stamp ink. It appears as the rubber-stamp impression when a stage of the transaction is confirmed, and nowhere else: not on links, buttons, accents or decoration.", "section": "colors" },
+      { "name": "The Husk Stays in the Grove Rule", "body": "Brown belongs to trunks, nuts, crates and milestones inside the illustration. UI chrome is green and paper only.", "section": "colors" },
+      { "name": "The Tiny Label, Huge Value Rule", "body": "Hierarchy is scale-only. A field pairs an 11px condensed label with a value that is either typed (Courier) or stencilled (wide black). Don't add a middle tier.", "section": "typography" },
+      { "name": "The Typed Value Rule", "body": "Anything filled in (form entries, records, registration numbers, subcopy that describes the goods) is set in Courier Prime. Printed form text (labels, titles, buttons) is Archivo.", "section": "typography" },
+      { "name": "The One Beat Per Screen Rule", "body": "On phones only one transformation is visible per viewport. The record steps aside before the finale takes its place.", "section": "layout" },
+      { "name": "The Flat Paper Rule", "body": "Documents never lift. No drop shadows on panels, buttons or the header; use a rule or a tonal change instead.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do frame every surface as a ruled document: paper `2px` rules on green, `1.5px` green ink rules on paper, `1px` soft rules between cells.",
+      "Do pair an 11px condensed uppercase label with a large value, either typed in Courier Prime or stencilled in Archivo 900 at width 125%.",
+      "Do number boxes and stages the way a bill of lading does (\"(1) Shipper\", \"Stage 03\"); they are the world's own furniture.",
+      "Do texture paper with guilloche rings (repeating radial gradients of green-800 at 3 to 5% alpha), never with noise or photos.",
+      "Do scrub story motion to scroll with `ease: none` defaults, `scrub: 0.9`, and Lenis (`lerp: 0.09`) on the GSAP ticker; use `cubic-bezier(0.16, 1, 0.3, 1)` for state transitions.",
+      "Do reveal display lines through overflow masks (`yPercent: 110`, `expo.out`, 1.4s, 0.08s stagger).",
+      "Do fall back to a still hero frame with its working form under `prefers-reduced-motion`, with no pin.",
+      "Do leave unconfirmed facts as visibly open fields."
+    ],
+    "donts": [
+      "Don't use Stamp Violet for anything other than the stamp impression at a confirmed state.",
+      "Don't round UI corners or lift panels with drop shadows; the paper sits flat.",
+      "Don't bring husk brown into UI chrome; it lives in the grove.",
+      "Don't set filled-in values in Archivo or printed labels in Courier.",
+      "Don't add a second progress line or a second \"now\" marker; the route is one unbroken line.",
+      "Don't show more than one transformation per phone viewport.",
+      "Don't use photography or stock imagery; the world is drawn."
+    ]
+  }
+}

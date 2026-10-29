@@ -1,0 +1,231 @@
+<section id="journey" class="journey" aria-labelledby="hero-title">
+  <div class="stage">
+    <svg class="scene" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img"
+      aria-label="A coconut palm grows and ripens, the coconuts fall, a truck collects them and drives to the port, a crane loads the container onto a ship, and shipping routes spread across the globe.">
+      <defs>
+        <linearGradient id="j-sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#0b2213" />
+          <stop offset="0.6" stop-color="#1b4a2b" />
+          <stop offset="1" stop-color="#3a7a45" />
+        </linearGradient>
+        <radialGradient id="j-nut" cx="0.35" cy="0.3" r="0.75">
+          <stop offset="0" stop-color="#9a6a3e" />
+          <stop offset="0.6" stop-color="#6b3f1f" />
+          <stop offset="1" stop-color="#4a2b14" />
+        </radialGradient>
+        <radialGradient id="j-unripe" cx="0.35" cy="0.3" r="0.75">
+          <stop offset="0" stop-color="#7cbf6a" />
+          <stop offset="1" stop-color="#2f7d3f" />
+        </radialGradient>
+      </defs>
+
+      <rect width="1600" height="900" fill="url(#j-sky)" />
+      <circle class="j-moon" cx="1180" cy="250" r="90" fill="#dce7d3" opacity="0.12" />
+
+      <g class="world-wrap">
+        <g class="world">
+          <!-- Far grove & hills (parallax layer) -->
+          <g class="far-layer">
+            <path d="M-900 760 Q300 690 800 730 T1800 720 T2800 735 T3800 715 T4800 740 V900 H-900Z" fill="#245a33" />
+            <path [attr.d]="backPalms" fill="#2a6238" />
+          </g>
+          <path [attr.d]="midPalms" fill="#1a4428" />
+
+          <!-- Grass verge and road, grove to port -->
+          <path d="M-900 770 Q600 748 1400 768 T3300 762 V900 H-900Z" fill="#173d24" />
+          <rect x="-900" y="800" width="4200" height="64" fill="#122a1a" />
+          <path d="M-900 832 H3300" stroke="#dce7d3" stroke-width="3" stroke-dasharray="34 30" opacity="0.5" />
+
+          <!-- Milestones on the highway -->
+          @for (mx of [1900, 2700]; track mx) {
+            <g [attr.transform]="'translate(' + mx + ',796)'">
+              <path d="M-24 0 V-64 Q-24 -94 0 -94 Q24 -94 24 -64 V0Z" fill="#f2f5ee" />
+              <path d="M-24 -64 Q-24 -94 0 -94 Q24 -94 24 -64Z" fill="#9a6a3e" />
+              <text y="-34" text-anchor="middle" class="svg-label" fill="#173d24">PORT</text>
+              <path d="M-11 -18 H9 M3 -24 L10 -18 L3 -12" stroke="#173d24" stroke-width="2.4" fill="none" />
+            </g>
+          }
+
+          <!-- Port: quay, sea, crane -->
+          <rect x="3260" y="790" width="1080" height="110" fill="#24402c" />
+          <path d="M3260 792 H4340" stroke="#dce7d3" stroke-width="2" opacity="0.5" />
+          <rect x="4330" y="796" width="2600" height="110" fill="#10352a" />
+          @for (wx of [4400, 4700, 5000, 5300, 5600, 5900, 6200]; track wx) {
+            <path [attr.d]="'M' + wx + ' 830 q30 -10 60 0 t60 0'" stroke="#dce7d3" stroke-width="2" fill="none" opacity="0.22" />
+          }
+
+          <g class="crane" fill="#dce7d3">
+            <rect x="4116" y="356" width="16" height="434" />
+            <rect x="4262" y="356" width="16" height="434" />
+            <path d="M4132 420 L4262 520 M4262 420 L4132 520 M4132 560 L4262 660 M4262 560 L4132 660" stroke="#dce7d3" stroke-width="5" />
+            <rect x="3780" y="346" width="1060" height="20" />
+            <rect x="4110" y="300" width="174" height="46" fill="#9a6a3e" />
+            <path d="M4197 300 L4060 346 M4197 300 L4820 346" stroke="#dce7d3" stroke-width="3" />
+          </g>
+          <rect class="trolley" x="3888" y="366" width="44" height="16" fill="#0f2c19" />
+          <g class="cable-x">
+            <line class="cable" x1="3910" y1="382" x2="3910" y2="720" stroke="#dce7d3" stroke-width="2.5" />
+          </g>
+
+          <!-- The ship -->
+          <g class="ship">
+            <path d="M4380 700 H5160 L5108 800 H4424 Z" fill="#0b2213" />
+            <path d="M4405 772 H5132 L5122 790 H4414 Z" fill="#6b3f1f" />
+            <rect x="4400" y="590" width="92" height="110" fill="#dce7d3" />
+            <path d="M4410 612 H4482 M4410 634 H4482" stroke="#173d24" stroke-width="8" />
+            <rect x="4424" y="556" width="30" height="34" fill="#6b3f1f" />
+            <rect x="4500" y="630" width="130" height="70" fill="#7a4a24" />
+            <rect x="4810" y="630" width="160" height="70" fill="#dce7d3" />
+            <rect x="4980" y="630" width="150" height="70" fill="#4e9a55" />
+            <rect x="4500" y="560" width="130" height="70" fill="#4e9a55" />
+            <rect x="4810" y="560" width="160" height="70" fill="#7a4a24" />
+          </g>
+
+          <!-- The SAKSAVI container on the hoist -->
+          <g class="hoist">
+            <rect x="3830" y="720" width="160" height="70" fill="#2f7d3f" />
+            <path d="M3842 724 V786 M3856 724 V786 M3870 724 V786 M3956 724 V786 M3970 724 V786" stroke="#215f31" stroke-width="3" />
+            <text x="3912" y="762" text-anchor="middle" class="svg-stencil" fill="#dce7d3">SAKSAVI</text>
+          </g>
+
+          <!-- The palm -->
+          <g class="palm-body">
+            <path [attr.d]="palm.trunk" fill="#6b3f1f" />
+            <path [attr.d]="palm.rings" fill="none" stroke="#4a2b14" stroke-width="2.4" stroke-linecap="round" />
+            <g class="frond-wrap">
+              @for (f of palm.fronds; track $index) {
+                <g class="frond">
+                  <path [attr.d]="f.d" [attr.transform]="f.transform"
+                    [attr.fill]="f.tone === 'dark' ? '#215f31' : f.tone === 'mid' ? '#2f7d3f' : '#4e9a55'" />
+                </g>
+              }
+            </g>
+          </g>
+
+          <!-- Seven coconuts -->
+          @for (n of nuts; track $index) {
+            <g class="nut" [attr.transform]="'translate(' + n.hang.x + ',' + n.hang.y + ')'">
+              <ellipse [attr.rx]="n.r" [attr.ry]="n.r * 1.08" fill="url(#j-nut)" />
+              <ellipse class="unripe" [attr.rx]="n.r" [attr.ry]="n.r * 1.08" fill="url(#j-unripe)" />
+              <path [attr.d]="'M' + -n.r * 0.5 + ' ' + -n.r * 0.55 + 'q' + n.r * 0.3 + ' ' + -n.r * 0.25 + ' ' + n.r * 0.7 + ' ' + -n.r * 0.1"
+                fill="none" stroke="#dce7d3" stroke-width="2" stroke-linecap="round" opacity="0.35" />
+            </g>
+          }
+
+          <!-- Nuts thrown into the container at the port -->
+          @for (p of [0, 1, 2, 3]; track p) {
+            <g class="port-nut"><ellipse rx="20" ry="22" fill="url(#j-nut)" /></g>
+          }
+
+          <!-- The truck (faces right, y=0 is the road) -->
+          <g class="truck" transform="translate(800,790)">
+            <g class="truck-load">
+              @for (l of load; track $index) {
+                <ellipse [attr.cx]="l.x" [attr.cy]="l.y" [attr.rx]="l.r" [attr.ry]="l.r * 1.08" fill="url(#j-nut)" />
+              }
+            </g>
+            <rect x="0" y="-160" width="232" height="112" fill="#7a4a24" />
+            <path d="M0 -138 H232 M0 -116 H232 M0 -94 H232 M0 -72 H232" stroke="#5b3418" stroke-width="2" />
+            <rect x="-4" y="-166" width="240" height="10" fill="#4a2b14" />
+            <path d="M6 -156 l10 12 l10 -12 l10 12 l10 -12 l10 12 l10 -12 l10 12 l10 -12 l10 12 l10 -12 l10 12 l10 -12 l10 12 l10 -12 l10 12 l10 -12 l10 12 l10 -12 l10 12 l10 -12 l10 12 l10 -12"
+              fill="none" stroke="#dce7d3" stroke-width="2" opacity="0.7" />
+            <rect x="20" y="-144" width="192" height="64" fill="#1f4f2f" stroke="#dce7d3" stroke-width="2" />
+            <text x="116" y="-113" text-anchor="middle" class="svg-stencil" fill="#f2f5ee">SAKSAVI</text>
+            <text x="116" y="-91" text-anchor="middle" class="svg-label" fill="#dce7d3">AGRO EXPORTS</text>
+            <rect x="-8" y="-50" width="374" height="14" fill="#0b2213" />
+            <path d="M238 -48 V-150 Q238 -172 260 -172 H318 Q330 -172 336 -160 L362 -108 Q366 -100 366 -90 V-48 Z" fill="#2f7d3f" />
+            <path d="M254 -158 H314 L338 -112 H254 Z" fill="#dce7d3" opacity="0.9" />
+            <path d="M300 -104 V-56" stroke="#1f4f2f" stroke-width="2.5" />
+            <rect x="356" y="-60" width="16" height="22" fill="#dce7d3" />
+            <circle cx="360" cy="-80" r="7" fill="#f2f5ee" />
+            <path d="M26 -40 A38 38 0 0 1 102 -40 Z M262 -40 A38 38 0 0 1 338 -40 Z" fill="#0b2213" />
+            @for (wx of [64, 300]; track wx) {
+              <g class="wheel" [attr.transform]="'translate(' + wx + ',-30)'">
+                <circle r="30" fill="#0b2213" />
+                <circle r="13" fill="#dce7d3" />
+                <circle cx="0" cy="-7" r="2.6" fill="#0b2213" />
+                <circle cx="0" cy="7" r="2.6" fill="#0b2213" />
+                <circle cx="-7" cy="0" r="2.6" fill="#0b2213" />
+                <circle cx="7" cy="0" r="2.6" fill="#0b2213" />
+              </g>
+            }
+          </g>
+
+          <path d="M-900 880 Q900 862 1800 876 T3300 872 V900 H-900Z" fill="#0f2c19" />
+        </g>
+      </g>
+
+      <!-- Foreground fronds crossing the frame edge -->
+      <g class="fg" fill="#0b2213">
+        <path [attr.d]="fgFrond" transform="translate(-120,-90) scale(0.62) rotate(22)" />
+        <path [attr.d]="fgFrond" transform="translate(1720,-110) scale(-0.55,0.55) rotate(18)" />
+      </g>
+
+    </svg>
+
+    <!-- Worldwide: the dotted globe, turned by the scroll -->
+    <div class="globe-wrap" aria-hidden="true">
+      <app-globe class="globe" theme="dark" />
+    </div>
+
+    <div class="frame" aria-hidden="true"></div>
+
+    <div class="statement">
+      <h1 class="display" id="hero-title">
+        <span class="mask"><span class="ln">Pure</span></span>
+        <span class="mask"><span class="ln">coconuts.</span></span>
+        <span class="mask"><span class="ln pale">Global</span></span>
+        <span class="mask"><span class="ln pale">reach.</span></span>
+      </h1>
+      <p class="sub typed">
+        Semi-husked, dehusked and tender coconuts, plus copra, coconut oil and desiccated coconut, from the palm to your port.
+      </p>
+      <button type="button" class="phone-quote" (click)="openForm()" aria-controls="quote-slot" [attr.aria-expanded]="formOpen()">
+        Request a quote
+        <svg viewBox="0 0 24 12" aria-hidden="true"><path d="M0 6h21M16 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" /></svg>
+      </button>
+    </div>
+
+    <div class="form-slot" id="quote-slot" [class.open]="formOpen()" [attr.inert]="phone() && !formOpen() ? '' : null">
+      <button type="button" class="slot-close" (click)="closeForm()" aria-label="Close the quote form">
+        <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.8" /></svg>
+      </button>
+      <app-consignment-form />
+    </div>
+
+    <aside class="slip" aria-labelledby="journey-title">
+      <h2 class="display" id="journey-title">Palm to port</h2>
+      <ol>
+        @for (s of stages; track s.no) {
+          <li class="record">
+            <span class="field-label">Stage {{ s.no }} · {{ s.name }}</span>
+            <span class="typed typed-value">{{ s.record }}</span>
+          </li>
+        }
+      </ol>
+      <p class="slip-now" aria-hidden="true">
+        <span class="field-label">Stage 01 · Grown</span>
+        <span class="typed typed-value">{{ stages[0].record }}</span>
+      </p>
+      <app-ink-stamp class="stamp" text="Shipped on board" />
+    </aside>
+
+    <div class="finale">
+      <app-ink-stamp class="finale-stamp" text="Shipped on board" />
+      <p class="display">Port of discharge: <span>yours.</span></p>
+      <a href="#consignment" class="cta" (click)="toConsignment($event)">
+        Book your consignment
+        <svg viewBox="0 0 24 12" aria-hidden="true"><path d="M0 6h21M16 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" /></svg>
+      </a>
+    </div>
+
+    <div class="strip" aria-hidden="true">
+      <div class="line"><i class="progress"></i><span class="now-track"><i class="now"></i></span></div>
+      <ol>
+        @for (s of stages; track s.no) {
+          <li><span class="field-label">Stage {{ s.no }}</span><b class="display">{{ s.name }}</b></li>
+        }
+      </ol>
+    </div>
+  </div>
+</section>

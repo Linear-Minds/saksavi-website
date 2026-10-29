@@ -1,0 +1,128 @@
+:host {
+  display: block;
+  background: var(--paper);
+  color: var(--green-800);
+  background-image:
+    repeating-radial-gradient(circle at 100% 0%, transparent 0 9px, rgb(23 61 36 / 0.035) 9px 10px),
+    repeating-radial-gradient(circle at 0% 100%, transparent 0 11px, rgb(23 61 36 / 0.03) 11px 12px);
+}
+
+.goods {
+  padding: clamp(80px, 11vw, 160px) clamp(20px, 5vw, 80px) clamp(70px, 9vw, 130px);
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.goods-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+  column-gap: 60px;
+  align-items: end;
+}
+
+.goods-title {
+  font-size: clamp(28px, 3.6vw, 58px);
+}
+
+.mask {
+  display: block;
+  overflow: hidden;
+}
+
+.ln {
+  display: block;
+  white-space: nowrap;
+}
+
+.intro {
+  max-width: 40ch;
+  font-size: 18px;
+  line-height: 1.55;
+  padding-bottom: 8px;
+}
+
+.manifest {
+  margin-top: clamp(48px, 6vw, 88px);
+  border-bottom: var(--rule-ink);
+}
+
+.cols,
+.line-item {
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1.25fr) minmax(0, 1.1fr) minmax(0, 0.9fr);
+  column-gap: 32px;
+}
+
+.cols {
+  padding-bottom: 12px;
+  color: var(--green-700);
+}
+
+.line-item {
+  position: relative;
+  padding: 26px 0 28px;
+  align-items: baseline;
+  transition: background 0.35s var(--ease-out);
+
+  &:hover {
+    background: rgb(23 61 36 / 0.045);
+  }
+}
+
+.rule {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1.5px;
+  background: var(--green-800);
+}
+
+.mark {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-stretch: 125%;
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  // A stencilled shipping mark sits in a ruled box.
+  justify-self: start;
+  padding: 4px 8px;
+  border: 1.5px solid currentColor;
+}
+
+.name {
+  font-size: clamp(19px, 2vw, 30px);
+  line-height: 0.95;
+}
+
+.form,
+.use {
+  font-size: 16.5px;
+  line-height: 1.45;
+}
+
+@media (max-width: 900px) {
+  .goods-head {
+    grid-template-columns: 1fr;
+    row-gap: 22px;
+  }
+
+  .cols {
+    display: none;
+  }
+
+  .line-item {
+    grid-template-columns: 64px 1fr;
+    row-gap: 10px;
+    padding: 22px 0;
+  }
+
+  .form,
+  .use {
+    grid-column: 2;
+  }
+
+  .use {
+    font-weight: 700;
+  }
+}

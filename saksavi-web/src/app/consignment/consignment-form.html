@@ -1,0 +1,64 @@
+<form [id]="id" [formGroup]="form" (ngSubmit)="submit()" novalidate [attr.aria-labelledby]="id + '-title'">
+  <h2 class="display title" [id]="id + '-title'">{{ isFull() ? 'Book your consignment' : 'Request a quote' }}</h2>
+
+  <div class="fld">
+    <label class="field-label" [for]="id + '-product'">Goods</label>
+    <div class="select">
+      <select [id]="id + '-product'" formControlName="product">
+        @for (p of products; track p) {
+          <option [value]="p">{{ p }}</option>
+        }
+      </select>
+      <svg viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6" /></svg>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="fld" [class.err]="showError('quantity')">
+      <label class="field-label" [for]="id + '-qty'">Quantity</label>
+      <input [id]="id + '-qty'" formControlName="quantity" placeholder="e.g. 1 × 40ft" autocomplete="off"
+        [attr.aria-invalid]="showError('quantity')" [attr.aria-describedby]="showError('quantity') ? id + '-qty-e' : null" />
+      @if (showError('quantity')) { <span class="msg" [id]="id + '-qty-e'">How much do you need? A container count or tonnes is fine.</span> }
+    </div>
+    <div class="fld" [class.err]="showError('port')">
+      <label class="field-label" [for]="id + '-port'">Port of discharge</label>
+      <input [id]="id + '-port'" formControlName="port" placeholder="e.g. Jebel Ali" autocomplete="off"
+        [attr.aria-invalid]="showError('port')" [attr.aria-describedby]="showError('port') ? id + '-port-e' : null" />
+      @if (showError('port')) { <span class="msg" [id]="id + '-port-e'">Add the port the goods should reach.</span> }
+    </div>
+  </div>
+
+  @if (isFull()) {
+    <div class="fld">
+      <label class="field-label" [for]="id + '-co'">Company <span class="opt">optional</span></label>
+      <input [id]="id + '-co'" formControlName="company" autocomplete="organization" />
+    </div>
+  }
+
+  <div class="fld" [class.err]="showError('contact')">
+    <label class="field-label" [for]="id + '-contact'">Your email</label>
+    <input [id]="id + '-contact'" type="email" formControlName="contact" autocomplete="email" placeholder="name@company.com"
+      [attr.aria-invalid]="showError('contact')" [attr.aria-describedby]="showError('contact') ? id + '-contact-e' : null" />
+    @if (showError('contact')) { <span class="msg" [id]="id + '-contact-e'">Enter an email we can send the quote to.</span> }
+  </div>
+
+  @if (isFull()) {
+    <div class="fld">
+      <label class="field-label" [for]="id + '-notes'">Grade, packing or timing <span class="opt">optional</span></label>
+      <textarea [id]="id + '-notes'" formControlName="notes" rows="3"></textarea>
+    </div>
+  }
+
+  <button type="submit" class="send">
+    <span>Request quote</span>
+    <svg viewBox="0 0 24 12" aria-hidden="true"><path d="M0 6h21M16 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" /></svg>
+  </button>
+
+  <p class="status" role="status" aria-live="polite">
+    @switch (status()) {
+      @case ('drafted') { <app-ink-stamp class="stamp" text="Enquiry drafted" /> Your mail app has the consignment details ready to send. }
+      @case ('unconnected') { The enquiry channel isn’t connected yet. Your details are kept on this page; contact SAKSAVI directly for now. }
+      @case ('invalid') { Three fields are needed: quantity, port and email. }
+    }
+  </p>
+</form>

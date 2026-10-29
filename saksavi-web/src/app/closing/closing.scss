@@ -1,0 +1,154 @@
+:host {
+  display: block;
+  background: var(--green-800);
+}
+
+.closing {
+  padding: clamp(80px, 10vw, 150px) clamp(16px, 5vw, 80px) var(--frame);
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.sheet {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 620px);
+  border: var(--rule);
+}
+
+.lead {
+  padding: clamp(28px, 4vw, 56px);
+  border-right: var(--rule);
+
+  h2 {
+    font-size: clamp(30px, 4vw, 60px);
+    max-width: 9ch;
+  }
+
+  > p {
+    margin-top: 26px;
+    max-width: 38ch;
+    font-size: 18px;
+    line-height: 1.55;
+    color: var(--paper);
+  }
+}
+
+.papers {
+  margin-top: clamp(40px, 6vw, 80px);
+
+  h3 {
+    color: var(--paper);
+    padding-bottom: 10px;
+  }
+}
+
+.paper-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 20px;
+  padding: 12px 0;
+  border-top: var(--rule-soft);
+
+  dt {
+    font-size: 15.5px;
+  }
+
+  dd {
+    font-family: var(--font-typed);
+    font-size: 15px;
+    white-space: nowrap;
+  }
+}
+
+.pending {
+  // An unfilled field: visibly open, never a fabricated value.
+  color: var(--paper);
+  opacity: 0.75;
+  font-style: italic;
+}
+
+.close-form {
+  align-self: stretch;
+}
+
+.foot {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  border: var(--rule);
+  border-top: 0;
+}
+
+.sign {
+  background: #fff;
+  padding: 10px;
+  border-right: var(--rule);
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.foot-fields {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  > div {
+    padding: 22px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    & + div {
+      border-left: var(--rule-soft);
+    }
+  }
+
+  dt {
+    color: var(--paper);
+  }
+
+  dd {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .sheet {
+    grid-template-columns: 1fr;
+  }
+
+  .lead {
+    border-right: 0;
+    border-bottom: var(--rule);
+  }
+
+  .foot {
+    grid-template-columns: 1fr;
+  }
+
+  .sign {
+    border-right: 0;
+    border-bottom: var(--rule);
+    max-width: 200px;
+  }
+
+  .foot-fields {
+    grid-template-columns: 1fr 1fr;
+
+    > div:nth-child(3) {
+      border-left: 0;
+    }
+    > div:nth-child(n + 3) {
+      border-top: var(--rule-soft);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .paper-row {
+    flex-direction: column;
+    gap: 4px;
+  }
+}

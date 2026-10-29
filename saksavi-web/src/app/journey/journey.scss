@@ -1,0 +1,532 @@
+:host {
+  display: block;
+  position: relative;
+  --strip-h: 84px;
+  --form-w: 440px;
+}
+
+.stage {
+  position: relative;
+  height: 100svh;
+  min-height: 640px;
+  overflow: hidden;
+  background: var(--green-950);
+}
+
+.scene {
+  position: absolute;
+  inset: 0 0 auto;
+  width: 100%;
+  // The road sits just above the route strip instead of under it.
+  height: calc(100% - var(--frame) - var(--strip-h));
+}
+
+.world,
+.truck,
+.nut,
+.hoist,
+.ship,
+.fg {
+  will-change: transform;
+}
+
+.svg-stencil {
+  font-family: var(--font-display);
+  font-stretch: 125%;
+  font-weight: 900;
+  font-size: 26px;
+  letter-spacing: 0.04em;
+}
+
+.svg-label {
+  font-family: var(--font-display);
+  font-stretch: 75%;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+}
+
+.frame {
+  position: absolute;
+  inset: var(--frame);
+  border: var(--rule);
+  pointer-events: none;
+}
+
+.globe-wrap {
+  position: absolute;
+  inset: var(--bar-h) 0 calc(var(--frame) + var(--strip-h)) 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+.globe {
+  width: min(100%, 62vw);
+  aspect-ratio: 1;
+  max-height: 100%;
+}
+
+/* Frame 0: the statement box and the quote form, ruled into the document grid. */
+.statement {
+  position: absolute;
+  left: var(--frame);
+  top: calc(var(--frame) + var(--bar-h));
+  width: min(600px, 48vw);
+  padding: 30px 36px 34px;
+  border-right: var(--rule);
+  border-bottom: var(--rule);
+  background: rgb(15 44 25 / 0.86);
+
+  h1 {
+    font-size: clamp(34px, min(4.3vw, 7.6vh), 66px);
+    line-height: 0.9;
+  }
+
+  .mask {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 0.04em;
+  }
+
+  .ln {
+    display: block;
+  }
+
+  .pale {
+    color: var(--paper);
+  }
+
+  .sub {
+    margin-top: 20px;
+    max-width: 36ch;
+    font-size: clamp(14px, 1.1vw, 17px);
+    line-height: 1.5;
+    color: var(--paper);
+  }
+}
+
+.form-slot {
+  position: absolute;
+  right: var(--frame);
+  bottom: calc(var(--frame) + var(--strip-h));
+  width: var(--form-w);
+}
+
+.phone-quote {
+  display: none;
+  align-items: center;
+  gap: 14px;
+  margin-top: 18px;
+  padding: 15px 20px;
+  border: 0;
+  background: var(--paper-hi);
+  color: var(--green-800);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-stretch: 112%;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  svg {
+    width: 22px;
+  }
+}
+
+.slot-close {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  top: 14px;
+  right: 14px;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: var(--rule-ink);
+  background: var(--paper);
+  color: var(--green-800);
+  cursor: pointer;
+
+  svg {
+    width: 14px;
+  }
+}
+
+.finale-stamp {
+  display: none;
+  width: 150px;
+  margin-bottom: 4px;
+  transform: rotate(-6deg);
+}
+
+/* The consignment record that fills as the story runs. */
+.slip {
+  position: absolute;
+  left: var(--frame);
+  top: calc(var(--frame) + var(--bar-h));
+  width: min(400px, 32vw);
+  padding: 26px 28px 30px;
+  background: var(--paper);
+  color: var(--green-800);
+  border-right: var(--rule);
+  border-bottom: var(--rule);
+  background-image: repeating-radial-gradient(circle at 110% -10%, transparent 0 7px, rgb(23 61 36 / 0.05) 7px 8px);
+
+  h2 {
+    font-size: clamp(24px, 2.1vw, 32px);
+  }
+
+  ol {
+    margin-top: 18px;
+  }
+}
+
+.record {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 0 10px;
+  border-top: var(--rule-ink);
+  opacity: 0.32;
+
+  .field-label {
+    color: var(--green-700);
+  }
+}
+
+.typed-value {
+  min-height: 1.4em;
+  font-size: 17px;
+  line-height: 1.35;
+  color: var(--green-900);
+}
+
+.slip-now {
+  display: none;
+}
+
+// The stamp lands full-weight across the completed record.
+.stamp {
+  position: absolute;
+  left: 50%;
+  top: 54%;
+  width: 98%;
+  margin-left: -49%;
+  transform: rotate(-9deg);
+}
+
+.finale {
+  position: absolute;
+  right: calc(var(--frame) + 40px);
+  bottom: calc(var(--frame) + var(--strip-h) + 36px);
+  max-width: 440px;
+  text-align: right;
+
+  p {
+    font-size: clamp(24px, 2.4vw, 38px);
+  }
+
+  span {
+    color: var(--paper);
+  }
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 22px;
+  padding: 18px 24px;
+  background: var(--paper-hi);
+  color: var(--green-800);
+  font-weight: 800;
+  font-stretch: 112%;
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.25s var(--ease-out);
+
+  svg {
+    width: 26px;
+    transition: transform 0.35s var(--ease-out);
+  }
+
+  &:hover {
+    background: var(--paper);
+    svg {
+      transform: translateX(6px);
+    }
+  }
+}
+
+/* Bottom route strip: one unbroken line, one marker for now. */
+.strip {
+  position: absolute;
+  left: var(--frame);
+  right: var(--frame);
+  bottom: var(--frame);
+  height: var(--strip-h);
+  border-top: var(--rule);
+  background: rgb(11 34 19 / 0.92);
+
+  ol {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: 100%;
+  }
+
+  li {
+    padding: 14px 18px 16px;
+
+    & + li {
+      border-left: var(--rule-soft);
+    }
+  }
+
+  .field-label {
+    color: var(--paper);
+  }
+
+  b {
+    display: block;
+    margin-top: 6px;
+    font-size: clamp(15px, 1.5vw, 22px);
+  }
+}
+
+.line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -2px;
+  height: 2px;
+
+  .progress {
+    position: absolute;
+    inset: 0;
+    background: var(--paper-hi);
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+  }
+
+  .now-track {
+    position: absolute;
+    inset: 0;
+  }
+
+  .now {
+    position: absolute;
+    left: 0;
+    top: -6px;
+    width: 14px;
+    height: 14px;
+    margin-left: -7px;
+    border-radius: 50%;
+    background: var(--paper-hi);
+    box-shadow: 0 0 0 4px rgb(242 245 238 / 0.18);
+  }
+}
+
+/* Reduced motion: no pin; the hero frame stands still with its working form. */
+:host(.static) {
+  .slip,
+  .finale,
+  .globe {
+    display: none;
+  }
+}
+
+@media (max-width: 1100px) {
+  :host {
+    --form-w: 380px;
+  }
+}
+
+@media (max-width: 900px) {
+  :host {
+    --strip-h: 66px;
+    --slip-h: 112px;
+  }
+
+  .stage {
+    min-height: 560px;
+  }
+
+  // The scene owns everything above the slip and strip.
+  .scene {
+    height: calc(100% - var(--frame) - var(--strip-h) - var(--slip-h));
+  }
+
+  .globe-wrap {
+    bottom: calc(var(--frame) + var(--strip-h) + var(--slip-h));
+  }
+
+  .globe {
+    width: min(100%, 96vw);
+  }
+
+  .frame {
+    display: none;
+  }
+
+  .statement {
+    top: auto;
+    left: var(--frame);
+    right: var(--frame);
+    bottom: calc(var(--frame) + var(--strip-h));
+    width: auto;
+    padding: 22px 20px 24px;
+    border: var(--rule);
+
+    h1 {
+      font-size: clamp(28px, 8.4vw, 46px);
+    }
+
+    .sub {
+      margin-top: 14px;
+      font-size: 15px;
+    }
+  }
+
+  // On phones the statement's button slides the working form up over the scene.
+  .phone-quote {
+    display: inline-flex;
+  }
+
+  .form-slot {
+    z-index: 5;
+    left: var(--frame);
+    right: var(--frame);
+    bottom: var(--frame);
+    width: auto;
+    max-height: calc(100% - var(--frame) * 2 - var(--bar-h) - 8px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border: var(--rule);
+    transform: translateY(calc(100% + 40px));
+    transition: transform 0.45s var(--ease-out);
+
+    &.open {
+      transform: none;
+    }
+  }
+
+  // The route strip steps back while the sheet is up.
+  .form-slot.open ~ .strip {
+    visibility: hidden;
+  }
+
+  // The close control gets its own row on the paper so it never meets the title.
+  .form-slot {
+    background: var(--paper);
+  }
+
+  .slot-close {
+    display: grid;
+    position: relative;
+    top: auto;
+    right: auto;
+    margin: 12px 12px -8px auto;
+  }
+
+  .finale-stamp {
+    display: block;
+  }
+
+  .slip {
+    top: auto;
+    left: var(--frame);
+    right: var(--frame);
+    bottom: calc(var(--frame) + var(--strip-h));
+    width: auto;
+    height: var(--slip-h);
+    padding: 14px 18px;
+    border: var(--rule);
+
+    h2,
+    ol {
+      display: none;
+    }
+  }
+
+  .slip-now {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    .field-label {
+      color: var(--green-700);
+    }
+  }
+
+  .typed-value {
+    font-size: 15px;
+  }
+
+  .stamp {
+    top: 50%;
+    width: 78%;
+    margin-left: -39%;
+    margin-top: -32px;
+  }
+
+  .finale {
+    left: var(--frame);
+    right: var(--frame);
+    bottom: calc(var(--frame) + var(--strip-h));
+    min-height: var(--slip-h);
+    max-width: none;
+    padding: 14px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+    text-align: left;
+    // The stamped record itself: paper, so the violet ink reads.
+    background: var(--paper);
+    color: var(--green-800);
+    border: var(--rule);
+
+    p {
+      font-size: 20px;
+    }
+
+    span {
+      color: var(--green-600);
+    }
+
+    .cta {
+      background: var(--green-800);
+      color: var(--paper-hi);
+    }
+  }
+
+  .cta {
+    margin-top: 0;
+    padding: 12px 14px;
+    font-size: 12px;
+    gap: 10px;
+    flex-shrink: 0;
+
+    svg {
+      width: 18px;
+    }
+  }
+
+  .strip {
+    li {
+      padding: 10px 8px 12px;
+    }
+    .field-label {
+      font-size: 10px;
+    }
+    b {
+      font-size: 14px;
+      font-stretch: 100%;
+    }
+  }
+}

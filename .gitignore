@@ -1,0 +1,45 @@
+# Dependencies and build output (anywhere in the repo)
+node_modules/
+dist/
+out-tsc/
+.angular/
+coverage/
+*.tsbuildinfo
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors: keep shared VS Code settings, drop personal state
+.idea/
+.history/
+*.sublime-workspace
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# Claude Code: personal settings stay local
+.claude/settings.local.json
+
+# Impeccable: keep the design record (config.json, design.json, surfaces/),
+# ignore per-machine state and generated review artefacts
+.impeccable/config.local.json
+.impeccable/hook.cache.json
+.impeccable/questions/
+.impeccable/review/
+.impeccable/build/
+.impeccable/live/
